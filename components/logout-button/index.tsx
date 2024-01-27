@@ -1,12 +1,13 @@
 "use client";
 
 import { signOut } from "next-auth/react";
+import { Button } from "../ui/button";
 
 const LogoutButton: React.FC = () => {
   return (
-    <button onClick={() => signOut()}>
-      <span>Sign out</span>
-    </button>
+    <Button variant="link" onClick={() => signOut()}>
+      Sign out
+    </Button>
   );
 };
 
