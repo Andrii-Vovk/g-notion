@@ -6,7 +6,7 @@ const CalendarsGet: React.FC = () => {
   const [calendars, setCalendars] = useState<any>([]);
 
   const getCalendars = async () => {
-    const response = await fetch("/api/calendar");
+    const response = await fetch("/api/calendars");
     const data = await response.json();
     setCalendars(data);
   };
