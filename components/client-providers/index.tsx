@@ -8,7 +8,7 @@ interface Props extends PropsWithChildren {
   session: Session | null;
 }
 
-const ClientSessionProvider: React.FC<Props> = ({ children, session }) => {
+const ClientProviders: React.FC<Props> = ({ children, session }) => {
   return <SessionProvider session={session}>{children}</SessionProvider>;
 };
-export default ClientSessionProvider;
+export default ClientProviders;

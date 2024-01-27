@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ClientSessionProvider from "@/components/client-session-provider";
+import ClientProviders from "@/components/client-providers";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
+import Header from "@/components/header";
+import { twMerge } from "tailwind-merge";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +18,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const session = await getServerSession(authOptions);
 
   return (
-    <ClientSessionProvider session={session}>
-      <html lang="en">
+    <ClientProviders session={session}>
+      <html lang="en" className={twMerge("bg-background dark")} style={{ colorScheme: "dark" }}>
         <body className={inter.className}>
+          <Header />
           <main>{children}</main>
         </body>
       </html>
-    </ClientSessionProvider>
+    </ClientProviders>
   );
 }

@@ -42,6 +42,7 @@
     "cmdk": "^0.2.0",
     "date-fns": "^3.3.1",
     "embla-carousel-react": "8.0.0-rc21",
+    "framer-motion": "^11.0.3",
     "googleapis": "^131.0.0",
     "lucide-react": "^0.316.0",
     "mongoose": "^8.0.3",
