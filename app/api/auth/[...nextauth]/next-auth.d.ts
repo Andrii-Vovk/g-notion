@@ -6,5 +6,7 @@ type AuthError = "refresh-token";
 declare module "next-auth" {
   interface Session {
     accessToken: string;
+    refreshToken: string;
+    expiresAt: Date;
   }
 }
